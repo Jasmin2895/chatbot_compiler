@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "format": "prettier \"src/**/*.{js,html}\"",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
