@@ -1,23 +1,10 @@
-import React from "react";
-import { render } from "react-dom";
+import React, { Component } from "React";
+import ReactDOM from "react-dom";
 
-const Pet = ({ name, animal, breed }) => {
-  return React.createElement("div", {}, [
-    React.createElement("h1", {}, name),
-    React.createElement("h2", {}, animal),
-    React.createElement("h2", {}, breed)
-  ]);
-};
+export default class App extends Component {
+  render() {
+    return <p>This is my new react App version 1.2</p>;
+  }
+}
 
-const App = () => {
-  return React.createElement("div", { id: "something-important" }, [
-    React.createElement("h1", {}, "ChatBot Compiler"),
-    React.createElement(Pet, {
-      name: "Luna",
-      animal: "Dog",
-      breed: "Havana"
-    })
-  ]);
-};
-
-render(React.createElement(App), document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
