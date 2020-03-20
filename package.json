@@ -38,8 +38,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "monaco-editor": "^0.20.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "react-monaco-editor": "^0.34.0"
   }
 }
