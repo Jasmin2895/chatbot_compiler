@@ -1,23 +1,43 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
+import { render } from "react-dom";
+import MonacoEditor from "react-monaco-editor";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    this.state = {
+      code: "//tyep your code here"
+    };
   }
+
   render() {
+    const code = this.state.code;
+    const options = {
+      selectOnLineNumbers: true
+    };
+
+    editorDidMount = (editor, moncao) => {
+      console.log("editorDidMount", editor);
+      editor.focus();
+    };
+
+    onChange = () => {
+      console.log("onChange", newValue, e);
+    };
     return (
       <div>
-        <p>This is my new react App version 1.1</p>
-        <div
-          id="container"
-          style={{ width: "800px", height: "600px", border: "1px solid #ccc" }}
-        ></div>
-        <script src="index.js"></script>
+        <MonacoEditor
+          width="800"
+          height="600"
+          language="javascript"
+          theme="vs-dark"
+          value={code}
+          options={options}
+          onChange={this.onChange}
+          editorDidMount={this.editorDidMount}
+        />
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
