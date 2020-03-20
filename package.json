@@ -12,10 +12,10 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "lint:fix": "eslint src/**/*.js --fix"
   },
   "eslintConfig": {
@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "monaco-editor-webpack-plugin": "^1.9.0",
+    "prettier": "^1.19.1",
+    "react-app-rewired": "^2.1.5"
   }
 }
