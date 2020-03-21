@@ -27,7 +27,13 @@ class App extends Component {
         language="javascript"
         theme="vs-dark"
         value={code}
+        fontFamily="Fira Code"
+        fontLigatures={true}
+        formatOnPaste="true"
+        fontSize="20px"
         options={options}
+        onChange={this.onChange}
+        editorDidMount={this.editorDidMount}
       />
     );
   }
