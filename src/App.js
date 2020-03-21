@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MonacoEditor from "react-monaco-editor";
 import { ChatBot } from "./components/ChatBot";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,11 @@ class App extends Component {
   }
 
   render() {
-    return <ChatBot />;
+    return (
+      <div class="chatbot-compiler">
+        <ChatBot />
+      </div>
+    );
   }
 }
 
