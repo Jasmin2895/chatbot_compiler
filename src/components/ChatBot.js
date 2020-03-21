@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MonacoEditor from "react-monaco-editor";
 
-class App extends Component {
+export class ChatBot extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,10 +27,6 @@ class App extends Component {
         language="javascript"
         theme="vs-dark"
         value={code}
-        fontFamily="Fira Code"
-        fontLigatures={true}
-        formatOnPaste="true"
-        fontSize="20px"
         options={options}
         onChange={this.onChange}
         editorDidMount={this.editorDidMount}
@@ -38,5 +34,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
