@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ChatBot } from "./components/ChatBot/ChatBot";
+import { Navbar } from "./components/Navbar/Navbar";
 import "./App.css";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <div class="chatbot-compiler">
+        <Navbar />
         <ChatBot />
       </div>
     );

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MonacoEditor from "react-monaco-editor";
-
 export class ChatBot extends Component {
   constructor(props) {
     super(props);
