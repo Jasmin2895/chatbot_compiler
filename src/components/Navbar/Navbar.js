@@ -17,7 +17,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <div className="navbar-item navbar-heading">ChatBot Playground</div>
+        <div className="navbar-item navbar-heading">Code Playground</div>
         <div className="navbar-item">
           <button className="navbar-button" onClick={this.onClickPublish}>
             <img className="navbar-header-img" src={publish_icon}></img>
