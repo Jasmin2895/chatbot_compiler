@@ -17,7 +17,11 @@ export class ChatBot extends Component {
   render() {
     const code = this.state.code;
     const options = {
-      selectOnLineNumbers: true
+      selectOnLineNumbers: true,
+      fontSize: 17,
+      fontFamily: "Fira Code",
+      fontLigatures: true,
+      formatOnType: true
     };
     return (
       <MonacoEditor
