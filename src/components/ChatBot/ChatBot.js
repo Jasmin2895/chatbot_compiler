@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import MonacoEditor from "react-monaco-editor";
-
 export class ChatBot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code: "//type your code"
+      code: "//Write your functions here and exceute in the chatbot"
     };
   }
   editorDidMount(editor, monaco) {
@@ -23,7 +22,7 @@ export class ChatBot extends Component {
     return (
       <MonacoEditor
         width="800"
-        height="600"
+        height="800"
         language="javascript"
         theme="vs-dark"
         value={code}
