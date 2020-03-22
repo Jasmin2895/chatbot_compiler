@@ -7,21 +7,28 @@ export class Navbar extends Component {
   constructor(props) {
     super(props);
   }
+  onClickPublish = () => {
+    console.log("publish button click");
+  };
+
+  onClickNewTab = () => {
+    console.log("New playground clicked");
+  };
   render() {
     return (
       <div className="navbar">
         <div className="navbar-item navbar-heading">ChatBot Playground</div>
         <div className="navbar-item">
-          <div className="navbar-button">
+          <button className="navbar-button" onClick={this.onClickPublish}>
             <img className="navbar-header-img" src={publish_icon}></img>
             Publish
-          </div>
+          </button>
         </div>
         <div className="navbar-item">
-          <div className="navbar-button">
+          <button className="navbar-button" onClick={this.onClickNewTab}>
             <img className="navbar-header-img" src={plus_icon}></img>
             New Playground
-          </div>
+          </button>
         </div>
       </div>
     );

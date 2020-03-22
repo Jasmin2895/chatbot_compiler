@@ -32,6 +32,10 @@
   border: 2px solid #ddd;
   border-radius: 4px;
   font-size: 15px;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
+  background-color: transparent;
+  color: #ddd;
+  font-weight: bold;
+  font-family: "Fira Code";
 }

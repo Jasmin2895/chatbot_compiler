@@ -4,7 +4,7 @@ export class ChatBot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code: "//type your code"
+      code: "//Write your functions here and exceute in the chatbot"
     };
   }
   editorDidMount(editor, monaco) {
