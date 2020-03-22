@@ -22,7 +22,7 @@ export class ChatBot extends Component {
     return (
       <MonacoEditor
         width="800"
-        height="600"
+        height="800"
         language="javascript"
         theme="vs-dark"
         value={code}

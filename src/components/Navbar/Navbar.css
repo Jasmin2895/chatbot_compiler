@@ -4,21 +4,34 @@
   color: white;
 }
 
+.navbar-heading {
+  font-size: 30px;
+}
+
 .navbar-item {
   float: left;
   color: #fdf7fd;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar-item:hover {
-  background-color: #ddd;
-  color: black;
+  font-family: "Fira Code";
+  font-weight: bold;
 }
 
 .navbar-item.active {
   background-color: #4caf50;
   color: #fdf7fd;
+}
+
+.navbar-header-img {
+  height: 15px;
+  margin-right: 5px;
+}
+
+.navbar-button {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 5px;
+  text-align: center;
 }
