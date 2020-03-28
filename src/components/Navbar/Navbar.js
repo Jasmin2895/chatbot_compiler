@@ -7,16 +7,24 @@ import plus_icon from "./../../../public/plus_icon.png";
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   code: ""
-    // };
+    this.onClickNewTab = this.onClickNewTab.bind(this);
+    this.onClickPublish = this.onClickPublish.bind(this);
+    this.state = {
+      code: ""
+    };
   }
   onClickPublish = () => {
     console.log("publish button click");
   };
 
   onClickNewTab = () => {
-    console.log("New playground clicked");
+    //erase the existing code and setup a new window,
+    let newText = "";
+    this.setState({
+      code: "//Type your code here"
+    });
+    this.props.editCodeEditor(this.state.code);
+    console.log("New playground clicked", this);
   };
   render() {
     return (
