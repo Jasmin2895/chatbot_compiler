@@ -5,7 +5,7 @@ import { Provider } from "redux-thunk";
 import thunk from "redux-thunk";
 import "./index.css";
 import App from "./App";
-import rootReducer from "./../src/reducers/rootReducers";
+import rootReducer from "./reducers/editCodeReducer";
 
 const store = createStore(rootReducer);
 
