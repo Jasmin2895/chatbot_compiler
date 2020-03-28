@@ -1,8 +1,8 @@
-export const changeEditorCode = text => ({
-  type: "EDIT_CODE",
-  text
-});
+import * as actionTypes from "./actionTypes";
 
-// export const editorFilters = {
-
-// };
+export const editCodeEditor = code => {
+  return {
+    type: actionTypes.EDIT_CODE,
+    code
+  };
+};
