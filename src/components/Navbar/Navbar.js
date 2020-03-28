@@ -7,6 +7,9 @@ import plus_icon from "./../../../public/plus_icon.png";
 class Navbar extends Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   code: ""
+    // };
   }
   onClickPublish = () => {
     console.log("publish button click");
@@ -36,7 +39,7 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = dispatch => {
+const mapStateToProps = (state, ownProps) => {
   return {
     code: state.code
   };

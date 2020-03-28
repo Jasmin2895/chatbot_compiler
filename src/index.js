@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createStore } from "redux";
-import { Provider } from "redux-thunk";
+import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import "./index.css";
 import App from "./App";
@@ -16,4 +16,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-serviceWorker.unregister();
+// serviceWorker.unregister();
