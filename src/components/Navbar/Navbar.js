@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
+import { connect } from "react-redux";
+import * as action from "./../../actions/index";
 import "./Navbar.css";
 import publish_icon from "./../../../public/publish_icon.png";
 import plus_icon from "./../../../public/plus_icon.png";
-export class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
   }
@@ -34,3 +35,17 @@ export class Navbar extends Component {
     );
   }
 }
+
+const mapStateToProps = dispatch => {
+  return {
+    code: state.code
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    editCodeEditor: code => dispatch(action.editCodeEditor(code))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
