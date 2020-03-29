@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { editCodeEditorAction } from "./../../actions/index";
 import * as action from "./../../actions/index";
 import MonacoEditor from "react-monaco-editor";
+import { findDOMNode } from "react-dom";
 class ChatBot extends Component {
   constructor(props) {
     super(props);
@@ -12,18 +14,23 @@ class ChatBot extends Component {
     };
   }
   editorDidMount(editor, monaco) {
-    console.log("editorDidMount", editor);
     editor.focus();
   }
+  // re render component when the state is updated
+  componentWillReceiveProps = nextProps => {
+    if (this.props.code !== nextProps.code) {
+      this.setState({
+        code: nextProps.code
+      });
+    }
+  };
   onChange(newValue, e) {
     this.setState({
       code: newValue
     });
-    console.log("onChange", newValue);
-    this.props.editCodeEditor(newValue);
+    this.props.editCodeEditorAction(newValue);
   }
   render() {
-    console.log("editor code", this.state.code);
     const options = {
       selectOnLineNumbers: true,
       fontSize: 17,
@@ -47,16 +54,13 @@ class ChatBot extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mapStateToProps", state);
   return {
-    code: state.code
+    code: state.editCodeReducer.code
   };
 };
 
-const mapDispatchProps = dispatch => {
-  return {
-    editCodeEditor: code => dispatch(action.editCodeEditor(code))
-  };
-};
+const mapDispatchProps = dispatch => ({
+  editCodeEditorAction: code => dispatch(editCodeEditorAction(code))
+});
 
 export default connect(mapStateToProps, mapDispatchProps)(ChatBot);

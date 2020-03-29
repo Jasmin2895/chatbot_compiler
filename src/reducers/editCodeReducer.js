@@ -1,11 +1,17 @@
 import * as actionTypes from "./../actions/actionTypes";
 
-export default (state = [], action) => {
-  console.log("reducer", state, action);
+const initialState = {
+  code: ""
+};
+const editCodeReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.EDIT_CODE:
-      return action.code;
+      return Object.assign({}, state, {
+        code: action.code
+      });
     default:
       return state;
   }
 };
+
+export default editCodeReducer;

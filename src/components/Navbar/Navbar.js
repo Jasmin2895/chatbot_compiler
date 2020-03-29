@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as action from "./../../actions/index";
 import "./Navbar.css";
+import { editCodeEditorAction } from "./../../actions/index";
 import publish_icon from "./../../../public/publish_icon.png";
 import plus_icon from "./../../../public/plus_icon.png";
 class Navbar extends Component {
@@ -23,8 +24,9 @@ class Navbar extends Component {
     this.setState({
       code: "//Type your code here"
     });
-    this.props.editCodeEditor(this.state.code);
-    console.log("New playground clicked", this);
+    this.props.editCodeEditorAction("//Type your code here");
+
+    // this.props.editCodeEditorAction()
   };
   render() {
     return (
@@ -47,15 +49,15 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
-    code: state.code
+    code: state.editCodeReducer.code
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    editCodeEditor: code => dispatch(action.editCodeEditor(code))
+    editCodeEditorAction: code => dispatch(editCodeEditorAction(code))
   };
 };
 
