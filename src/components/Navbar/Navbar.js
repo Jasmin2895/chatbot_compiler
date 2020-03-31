@@ -47,19 +47,21 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <div className="navbar-item navbar-heading">ChatBot Playground</div>
-        <div className="navbar-item">
-          <button className="navbar-button" onClick={this.onClickPublish}>
-            <img className="navbar-header-img" src={publish_icon}></img>
-            Publish
-          </button>
-        </div>
-        <div className="navbar-item">
-          <button className="navbar-button" onClick={this.onClickNewTab}>
-            <img className="navbar-header-img" src={plus_icon}></img>
-            New Playground
-          </button>
-        </div>
+        <Nav>
+          <div className="navbar-item navbar-heading">ChatBot Playground</div>
+          <div className="navbar-item">
+            <button className="navbar-button" onClick={this.onClickPublish}>
+              <img className="navbar-header-img" src={publish_icon}></img>
+              Publish
+            </button>
+          </div>
+          <div className="navbar-item">
+            <button className="navbar-button" onClick={this.onClickNewTab}>
+              <img className="navbar-header-img" src={plus_icon}></img>
+              New Playground
+            </button>
+          </div>
+        </Nav>
         <Modal open={this.state.open} toggle={this.toggle}>
           <ModalHeader>Header</ModalHeader>
           <ModalBody>👋 Hello there!</ModalBody>
