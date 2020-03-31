@@ -1,19 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Navbar.css";
-import Modal from "./../Modal/Modal";
+import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
 import { editCodeEditorAction } from "./../../actions/index";
 import publish_icon from "./../../../public/publish_icon.png";
 import plus_icon from "./../../../public/plus_icon.png";
+import { Nav, NavItem, NavLink } from "shards-react";
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.onClickNewTab = this.onClickNewTab.bind(this);
     this.onClickPublish = this.onClickPublish.bind(this);
     this.state = {
-      code: ""
+      code: "",
+      open: false
     };
   }
+
+  toggle = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
+  toggleClose = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
 
   onClickPublish = () => {
     console.log("publish button click");
@@ -22,7 +35,8 @@ class Navbar extends Component {
   onClickNewTab = () => {
     //erase the existing code and setup a new window,
     this.setState({
-      show: !this.state.show
+      show: !this.state.show,
+      open: true
     });
     let newText = "";
     this.setState({
@@ -46,6 +60,11 @@ class Navbar extends Component {
             New Playground
           </button>
         </div>
+        <Modal open={this.state.open} toggle={this.toggle}>
+          <ModalHeader>Header</ModalHeader>
+          <ModalBody>👋 Hello there!</ModalBody>
+          <Button onClick={this.toggle}>Small Modal!</Button>
+        </Modal>
       </div>
     );
   }
