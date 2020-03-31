@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ChatBot from "./components/ChatBot/ChatBot";
 import Navbar from "./components/Navbar/Navbar";
+import Modal from "./components/Modal/Modal";
 import "./App.css";
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
       <div class="chatbot-compiler">
         <Navbar />
         <ChatBot />
+        <Modal />
       </div>
     );
   }
