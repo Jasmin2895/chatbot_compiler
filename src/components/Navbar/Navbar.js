@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as action from "./../../actions/index";
 import "./Navbar.css";
 import Modal from "./../Modal/Modal";
 import { editCodeEditorAction } from "./../../actions/index";
@@ -15,11 +14,7 @@ class Navbar extends Component {
       code: ""
     };
   }
-  showModal = e => {
-    this.setState({
-      show: !this.state.show
-    });
-  };
+
   onClickPublish = () => {
     console.log("publish button click");
   };
@@ -34,8 +29,6 @@ class Navbar extends Component {
       code: "//Type your code here"
     });
     this.props.editCodeEditorAction("//Type your code here");
-
-    // this.props.editCodeEditorAction()
   };
   render() {
     return (
@@ -53,12 +46,6 @@ class Navbar extends Component {
             New Playground
           </button>
         </div>
-        <Modal onClose={this.showModal} show={this.state.show}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-          deserunt corrupti, ut fugit magni qui quasi nisi amet repellendus non
-          fuga omnis a sed impedit explicabo accusantium nihil doloremque
-          consequuntur.
-        </Modal>
       </div>
     );
   }
